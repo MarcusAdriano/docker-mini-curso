@@ -1,3 +1,4 @@
+version: '3.6'
 services:
   mysqldb:
     image: mysql
@@ -5,9 +6,16 @@ services:
       - MYSQL_ROOT_PASSWORD=senha_dificil
     volumes:
       - ./db/db-init.sql:/docker-entrypoint-initdb.d/init.sql
-  todoapp:
+  frontend:
     depends_on:
       - mysqldb
+    image: marcusadriano/frontend-todo
+    ports:
+      - "8082:80"
+  backend:
+    depends_on:
+      - mysqldb
+      - frontend
     command: sh -c './wait-for mysqldb:3306'
     environment:
       - MYSQL_HOST=mysqldb
