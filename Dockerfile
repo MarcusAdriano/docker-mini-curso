@@ -1,0 +1,13 @@
+FROM openjdk:11
+
+ENV APP_PATH=/opt/myapp/
+ENV APP_JAR=todo-0.0.1-SNAPSHOT.jar
+
+RUN mkdir $APP_PATH
+COPY target/$APP_JAR $APP_PATH 
+
+EXPOSE 8080
+
+WORKDIR $APP_PATH
+
+ENTRYPOINT  java -jar $APP_JAR
