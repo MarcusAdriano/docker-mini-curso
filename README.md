@@ -1,4 +1,4 @@
-## SpringBoot + MySQL + Docker
+## SpringBoot + MySQL + Frontend (HTML + JS) + Docker
 
 Exemplo simples de utilização de Docker executando uma aplicação SpringBoot que acessa uma base de dados MySQL.
 
