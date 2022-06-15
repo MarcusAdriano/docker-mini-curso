@@ -31,7 +31,7 @@ public class TodoController {
 
 	@PostMapping("/")
 	public ResponseEntity<TodoEntity> save(@RequestBody TodoEntity entity) {
-		final var result = repo.save(entity);
+		final TodoEntity result = repo.save(entity);
 		return ResponseEntity.ok(result);
 	}
 
