@@ -42,5 +42,10 @@ Executando o container Java que usa o Banco de Dados:
 docker run -ti -m 256MB --rm -e MYSQL_HOST=mysqltodo -e MYSQL_USR=root -e MYSQL_PWD=senha_dificil -p 8081:8080 --network todoapp marcusadriano/java-todo
 ```
 
+### Execução via docker-compose
+
+```bash
+docker-compose up
+```
 
 
